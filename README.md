@@ -1,8 +1,7 @@
 # `dispatch-action`
 
-![Version](https://img.shields.io/badge/version-1.1.6-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-1.1.7-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
-[![Twitter: mehdi_vasigh](https://img.shields.io/twitter/follow/mehdi_vasigh.svg?style=social)](https://twitter.com/mehdi_vasigh)
 
 > Create repository dispatch events to trigger a Github workflow from within another workflow
 
@@ -22,12 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Emit repository_dispatch
-        uses: mvasigh/dispatch-action@master
+        uses: arundo/dispatch-action@main
         with:
-          # You should create a personal access token and store it in your repository
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          # You need a GitHub token with repo read and write rights
+          token: ${{ secrets.<name of token secret> }}
           repo: other-repo
-          owner: mvasigh
+          owner: arundo
           event_type: sample_push
 ```
 
@@ -62,7 +61,7 @@ Here is an example:
 # Dispatcher workflow in submodule
 steps:
   - name: Dispatch submodule_push event
-    uses: mvasigh/dispatch-action@master
+    uses: arundo/dispatch-action@main
     with:
       token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       repo: '@'
@@ -96,6 +95,7 @@ This action accepts the following options:
 
 ## Author
 
+This repo has been forked from the personal GitHub of Mehdi Vasigh, former Arundo employee so that it can be maintained by Arundo
 👤 **Mehdi Vasigh <mehdi.vasigh@gmail.com>**
 
 - Website: https://mvasigh.dev/

@@ -1,9 +1,9 @@
 {
   "name": "dispatch-action",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "main": "index.js",
-  "repository": "https://github.com/mvasigh/dispatch-action.git",
-  "author": "Mehdi Vasigh <mehdi.vasigh@gmail.com>",
+  "repository": "https://github.com/arundo/dispatch-action.git",
+  "author": "Jon Clayton <jon@arundo.com>",
   "license": "MIT",
   "scripts": {
     "build": "ncc build ./src/index.js -o dist",
